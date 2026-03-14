@@ -13,8 +13,7 @@ class TripleAItem(scrapy.Item):
     population = scrapy.Field()
     ownership = scrapy.Field()
     ownership_percentage = scrapy.Field()
-    
-    pass
+
 
 class NumbeoItem(scrapy.Item):
     country = scrapy.Field()
@@ -22,3 +21,9 @@ class NumbeoItem(scrapy.Item):
     purchasing_power_index = scrapy.Field()
     quality_of_life_index = scrapy.Field()
     safety_index = scrapy.Field()
+    
+
+class ISOItem(scrapy.Item):
+    country = scrapy.Field()
+    iso = scrapy.Field()
+
