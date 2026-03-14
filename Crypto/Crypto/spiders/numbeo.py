@@ -16,7 +16,7 @@ class NumbeoSpider(scrapy.Spider):
         for row in response.css('tbody tr'):
             country = row.css('td.cityOrCountryInIndicesTable::text').get()
             self.countries_data[country] = {
-                'name': country,
+                'country': country,
                 'cost_of_living_index': row.css('td::text').getall()[1],
                 'purchasing_power_index': row.css('td::text').getall()[6],
                 'quality_of_life_index': None,
@@ -37,7 +37,7 @@ class NumbeoSpider(scrapy.Spider):
                 self.countries_data[country]['safety_index'] = row.css('td::text').getall()[3]
             else:
                 self.countries_data[country] = {
-                    'name': country,
+                    'country': country,
                     'cost_of_living_index': None,
                     'purchasing_power_index': None,
                     'quality_of_life_index': row.css('td::text').getall()[1],
